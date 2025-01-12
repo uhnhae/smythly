@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Content - Smythly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="Smythly Logo" id="site-logo">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="bonus.html">Bonus Content</a></li>
+                <li><a href="contact.html">Login</a></li>     
+            </ul>
+        </nav>
+    </header>
+
+        <body>
+            <h1>Bonus Content</h1>
+        
+            <div class="barousel">
+                
+                <div class="barousel-item active">
+                    <h2>Check Out Our Latest Video</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dAJYk6CY7j4" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                <div class="barousel-item">
+                    <h2>Character Data:</h2>
+                    <h3>Darius Hayes</h3>
+                    <p> Eyes: Brown
+                        Hair: Brown
+                        Height: 6'2
+                        Book: The Living and the Dead
+                    </p>
+                </div>
+                <div class="barousel-item">
+                    <h2>Latest News Article</h2>
+                    <p>Wattpad, the popular online storytelling platform, is reshaping how readers and writers connect in the digital age. Since its launch in 2006, Wattpad has grown into a global community of over 90 million users, where aspiring authors and avid readers come together to share and discover stories across every genre imaginable. With its user-friendly interface, Wattpad allows writers to publish their works chapter by chapter, receiving immediate feedback from a dedicated fanbase. This interactive format has revolutionized the traditional process of writing and reading.</p>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="barousel-control prev" onclick="moveBarousel(-1)">&#10094;</button>
+                <button class="barousel-control next" onclick="moveBarousel(1)">&#10095;</button>
+            </div>
+        
+            <section class="countdown-section">
+                <h2>Countdown to Release</h2>
+                <div id="countdown"></div>
+            </section>
+    
+        </body>
+    <main>
+        <section class="bonus">
+            <h2>Image Gallery</h2>
+            <div class="bonus-container">
+                <img src="image/IMG_0210.PNG" alt="Art" />
+                <img src="image/IMG_0226.PNG" alt="Art" />
+                <img src="image/IMG_0236.PNG" alt="Art" />
+            </div>
+        </section>
+    </main>
+    <body> 
+        <section class="audio-section">
+            <h2>Listen to Our Podcast!</h2>
+            <audio controls>
+                <source src="audio1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio controls>
+                <source src="audio2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    
+        <section class="comments-section">
+            <h2>Share Your Thoughts</h2>
+            
+            <div class="sort-options">
+                <label for="sort-comments">Sort by:</label>
+                <select id="sort-comments">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                </select>
+            </div>
+            
+            <div class="username-input">
+                <input type="text" id="username" placeholder="Enter your name" />
+            </div>
+            
+            <div class="comment-input">
+                <textarea id="comment" placeholder="Write your comment here..." rows="4"></textarea>
+                <button id="send-comment">Send</button>
+            </div>
+            
+            <div class="comments-list">
+                <h3>Comments:</h3>
+                <ul id="comments"></ul>
+            </div>
+        </section>
+    </body>
+        
+<footer>
+    <p>Connect with me:</p>
+    <ul>
+        <li><a href="https://www.youtube.com/@NightLounge" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://www.instagram.com/llaugh12" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.wattpad.com/user/Smythly" target="_blank"><i class="fab fa-wattpad"></i> Wattpad</a></li>
+        <li><a href="mailto:lsmith278@student.cscc.edu"><i class="fas fa-envelope"></i> Email</a></li>
+        <li><a href="https://twitter.com/ongshelyd" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+</footer>
+<script>
+    let currentIndex = 0;
+
+function moveBarousel(direction) {
+    const items = document.querySelectorAll('.barousel-item');
+    items[currentIndex].classList.remove('active'); // Hide current item
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+    }
+
+    items[currentIndex].classList.add('active'); // Show new item
+}
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const commentsList = document.getElementById('comments');
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    
+    comments.forEach(comment => {
+        const newComment = document.createElement('li');
+        newComment.innerHTML = `<strong>${comment.user}:</strong> ${comment.text}`;
+        commentsList.appendChild(newComment);
+    });
+});
+
+document.getElementById('send-comment').addEventListener('click', function() {
+    const usernameInput = document.getElementById('username');
+    const commentInput = document.getElementById('comment');
+    const username = usernameInput.value.trim() || 'Anonymous'; 
+    const commentText = commentInput.value.trim();
+
+    if (commentText) {
+        const commentsList = document.getElementById('comments');
+        const newComment = document.createElement('li');
+        newComment.innerHTML = `<strong>${username}</strong>: ${commentText}`;
+        commentsList.appendChild(newComment);
+
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+        comments.push({ user: username, text: commentText });
+        localStorage.setItem('comments', JSON.stringify(comments));
+
+        usernameInput.value = '';
+        commentInput.value = '';
+    }
+});
+
+
+</script>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+   
+    window.addEventListener('scroll', function() {
+        const navLinks = document.querySelector('.nav-links');
+        const scrollPosition = window.scrollY;
+
+        if (navLinks.classList.contains('active')) {
+            navLinks.style.top = `${scrollPosition + 80}px`;
+        }
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

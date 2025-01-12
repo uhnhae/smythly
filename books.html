@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a selection of exciting books by Smythly. Discover your next great read!">
+    <meta name="keywords" content="books, reading, literature, Smythly">
+    <title>Books - Smythly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="Smythly Logo" id="site-logo">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="bonus.html">Bonus Content</a></li>
+                <li><a href="contact.html">Login</a></li>     
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Books by Smythly</h1>
+
+        <section class="bookly-section">
+            <h2>The Flowers of the Garden</h2>
+            <div class="bookly-grid">
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Flowers of the Garden Book 1 Cover">
+                    <h3>Lavender</h3>
+                    <p>A captivating tale of love blossoming in unexpected places.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Flowers of the Garden Book 2 Cover">
+                    <h3>Rue</h3>
+                    <p>Discover the secrets hidden within the garden's petals.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Flowers of the Garden Book 3 Cover">
+                    <h3>Rose</h3>
+                    <p>An enchanting story that intertwines romance and nature.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Flowers of the Garden Book 4 Cover">
+                    <h3>Lily</h3>
+                    <p>A magical adventure of friendship and growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bookly-section">
+            <h2>The Diamond Selection</h2>
+            <div class="bookly-grid">
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Diamond Selection Book 1 Cover">
+                    <h3>Sapphire</h3>
+                    <p>A thrilling heist that takes unexpected turns.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Diamond Selection Book 2 Cover">
+                    <h3>Jade</h3>
+                    <p>The glimmer of diamonds hides a dark secret.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Diamond Selection Book 3 Cover">
+                    <h3>Onyx</h3>
+                    <p>Love and betrayal in the world of high-stakes luxury.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Diamond Selection Book 4 Cover">
+                    <h3>Valencia</h3>
+                    <p>A race against time to uncover the truth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bookly-section">
+            <h2>Werewolves and Vampires</h2>
+            <div class="bookly-grid">
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Werewolves and Vampires Book 1 Cover">
+                    <h3>The Living and The Dead</h3>
+                    <p>A forbidden love between a werewolf and a vampire.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Werewolves and Vampires Book 2 Cover">
+                    <h3>Shadows of the Fallen</h3>
+                    <p>The battle for supremacy between two ancient races.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Werewolves and Vampires Book 3 Cover">
+                    <h3>Veil of the Ancients </h3>
+                    <p>A prophecy that could change their world forever.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Werewolves and Vampires Book 4 Cover">
+                    <h3> The Curse of Nature</h3>
+                    <p>Dark secrets and fierce loyalties in a supernatural realm.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bookly-section">
+            <h2>Crime Chronicles</h2>
+            <div class="bookly-grid">
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Crime Chronicles Book 1 Cover">
+                    <h3>The Deal</h3>
+                    <p>A gripping detective story that will keep you guessing.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Crime Chronicles Book 2 Cover">
+                    <h3>A Heart That Burns</h3>
+                    <p>The hunt for a serial killer in a quiet town.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Crime Chronicles Book 3 Cover">
+                    <h3>A Soul That Breaks</h3>
+                    <p>A lawyer's fight for justice in a corrupt system.</p>
+                </div>
+                <div class="bookly-item">
+                    <img src="image/unnamed (1).jpg" alt="Crime Chronicles Book 4 Cover">
+                    <h3>Until Death</h3>
+                    <p>A deep dive into the mind of a criminal mastermind.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    
+       
+        window.addEventListener('scroll', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const scrollPosition = window.scrollY;
+    
+            if (navLinks.classList.contains('active')) {
+                navLinks.style.top = `${scrollPosition + 80}px`;
+            }
+        });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <footer>
+        <p>Connect with me:</p>
+        <ul>
+            <li><a href="https://www.youtube.com/@NightLounge" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+            <li><a href="https://www.instagram.com/llaugh12" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.wattpad.com/user/Smythly" target="_blank"><i class="fab fa-wattpad"></i> Wattpad</a></li>
+            <li><a href="mailto:lsmith278@student.cscc.edu"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://twitter.com/ongshelyd" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+        </ul>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Into The Unknown</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="image/logo.png" alt="Smythly Logo" id="site-logo">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="bonus.html">Bonus Content</a></li>
+                <li><a href="contact.html">Login</a></li>     
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="book-image">
+            <img src="image/intotheunknown.png" alt="Into The Unknown Book Cover">
+        </div>
+        <div class="book-details">
+            <h1>Into The Unknown</h1>
+            <p class="description">
+                In a realm where ambition meets desire, Corden, a dedicated Vice-CEO of a security firm, navigates the complexities of his career while harboring a personal investigation that could unravel everything he knows. As he delves deeper into a web of secrets, he encounters Lavender, a spirited woman whose playful charm ignites something unexpected within him. But as their paths intertwine, shadows from Corden's past threaten to pull him back into a world he’s desperate to escape. With trust hanging by a thread, can love survive amidst the chaos, or will their hearts become collateral damage in a game they never intended to play?
+            </p>
+            <div class="like-counter">
+                <span>Likes: <strong id="like-count">31</strong></span>
+                <button onclick="increaseLikes()">Like</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Comment Section -->
+    <div class="comment-section">
+        <h2>Leave a Comment</h2>
+        <textarea id="comment-input" placeholder="Write your comment here..."></textarea><br>
+        <button onclick="submitComment()">Submit</button>
+    </div>
+
+    <!-- Comments List -->
+    <div class="comments-list" id="comments-list">
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Smythly Books</p>
+        <div class="login-signup">
+            <h3>Login / Sign Up</h3>
+            <form id="login-form" onsubmit="return handleLogin(event);">
+                <input type="email" id="email" placeholder="Email or Gmail" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        let likeCount = 31;
+
+        function increaseLikes() {
+            likeCount++;
+            document.getElementById('like-count').innerText = likeCount;
+        }
+
+        function submitComment() {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value;
+
+            if (commentText.trim() === "") {
+                alert("Comment cannot be empty!");
+                return;
+            }
+
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-item';
+            newComment.textContent = commentText;
+
+            const commentsList = document.getElementById('comments-list');
+            commentsList.prepend(newComment); 
+
+            commentInput.value = '';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault(); 
+            const email = document.getElementById('email').value;
+
+            if (email) {
+                alert(`Logged in with: ${email}`);
+            } else {
+                alert("Please enter a valid email.");
+            }
+        }
+    </script>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+   
+    window.addEventListener('scroll', function() {
+        const navLinks = document.querySelector('.nav-links');
+        const scrollPosition = window.scrollY;
+
+        if (navLinks.classList.contains('active')) {
+            navLinks.style.top = `${scrollPosition + 80}px`;
+        }
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+<footer>
+    <p>Connect with me:</p>
+    <ul>
+        <li><a href="https://www.youtube.com/@NightLounge" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+        <li><a href="https://www.instagram.com/llaugh12" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.wattpad.com/user/Smythly" target="_blank"><i class="fab fa-wattpad"></i> Wattpad</a></li>
+        <li><a href="mailto:lsmith278@student.cscc.edu"><i class="fas fa-envelope"></i> Email</a></li>
+        <li><a href="https://twitter.com/ongshelyd" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+    </ul>
+</footer>
+
+</body>
+
+</html>

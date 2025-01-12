@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smythly's Author Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="Smythly Logo" id="site-logo">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="bonus.html">Bonus Content</a></li>
+                <li><a href="contact.html">Login</a></li>     
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="welcome-title">Welcome to Smythly's World</h1>
+        <p class="welcome-description">Explore my books, blog posts, and exclusive content designed for readers and writers alike. Join me on this literary journey!</p>
+        
+
+        <!-- Carousel Section -->
+        <div id="bookCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image/intotheunknown.png" class="d-block w-100" alt="Book 1 Cover">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><a href="https://www.wattpad.com/story/364327744-into-the-unknown">Into The Unknown</a></h5>
+                        <p>Read the first four chapters now!!! Release Date: 12/19/2024</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/twitch-streaming-media-video-game-logo-live-stream.jpg" class="d-block w-100" alt="Book 2 Cover">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><a href="https://www.twitch.tv/lyddiesmile">Share your own stories on TWITCH!</a></h5>
+                        <p>Have your short stories read by smythly by submitting them on the blog.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/thumbnail_IMG_0079.jpg" class="d-block w-100" alt="Book 3 Cover">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5><a href="https://www.wattpad.com/story/232114551-the-living-the-dead">The Living & The Dead</a></h5>
+                        <p>Every Thurs. @8pm on Wattpad!</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Product Section -->
+        <div class="product-section">
+            <div class="product-item">
+                <h2><a href="book1.html">Into The Unknown</a></h2>
+                <p>Genre: Romantic Suspense, Thriller
+
+                    Description:
+                    
+                    Lavender has always been independent and grounded, but her carefully constructed life is thrown into chaos after meeting Corden Caldwell, the enigmatic Vice-CEO of a prestigious security firm. Corden, grappling with the mystery surrounding his father’s murder, finds himself drawn to Lavender despite his guarded demeanor. Together, they’re entangled in a complex web of secrets, betrayal, and intrigue.</p>
+            </div>
+            <div class="product-item">
+                <h2><a href="book2.html">The Living & The Dead</a></h2>
+                <p>Darius has been alive for thousands of years he has always been able to kill heartlessly, until he met the sweet and "innocent" Lilah. Lilah of the little olde Maybelle town has AB- blood, sweetest and most rich blood. How will Darius be able to protect Lilah from the others when he can barely protect her from himself?</p>
+            </div>
+            <div class="product-item">
+                <h2><a href="book3.html">The Deal</a></h2>
+                <p>"Cambria!" Emma gasped.
+                     Cambria looked up into the chest that ran into her. Perhaps it was a dark voice or how his light brown eyes glowed from the street light.
+                    "Hello? You are worrying me. Do you need to go to the hospital?" 
+                    Maybe it was the pain for the betrayal of the people she loved most. Or the stress of being perfect. 
+                    Cambria lifted her hands to the stranger's face and kissed him.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Connect with me:</p>
+        <ul>
+            <li><a href="https://www.youtube.com/@NightLounge" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+            <li><a href="https://www.instagram.com/llaugh12" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.wattpad.com/user/Smythly" target="_blank"><i class="fab fa-wattpad"></i> Wattpad</a></li>
+            <li><a href="mailto:lsmith278@student.cscc.edu"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://twitter.com/ongshelyd" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+        </ul>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    
+       
+        window.addEventListener('scroll', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const scrollPosition = window.scrollY;
+    
+            if (navLinks.classList.contains('active')) {
+                navLinks.style.top = `${scrollPosition + 80}px`;
+            }
+        });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

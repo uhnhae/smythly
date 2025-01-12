@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Smythly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="Smythly Logo" id="site-logo">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="blog.html">About</a></li>
+                <li><a href="bonus.html">Bonus Content</a></li>
+                <li><a href="contact.html">Login</a></li>     
+            </ul>
+        </nav>
+    </header>
+
+<main>
+
+    <div class="authorsel-container">
+        <h2>Featured Authors</h2>
+        <div class="authorsel">
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="authorsel-items">
+                <div class="authorsel-item">
+                    <img src="image/eye ball.jpg" alt="Author 1">
+                    <p>Author 1 - A master of suspense and thrilling narratives.</p>
+                </div>
+                <div class="authorsel-item">
+                    <img src="image/benten.png" alt="Author 2">
+                    <p>Author 2 - Capturing human emotions in every story.</p>
+                </div>
+                <div class="authorsel-item">
+                    <img src="image/eyeb.jpg" alt="Author 3">
+                    <p>Author 3 - Pushing the boundaries of fantasy fiction.</p>
+                </div>
+            </div>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <section class="about-smythly">
+        <h1>About Smythly</h1>
+        <p><strong>
+            Smythly is an anonymous author platform dedicated to sharing thoughts, stories, and insights without the constraints of personal identity. Here, words take center stage, allowing readers to connect deeply with the narrative rather than the writer.<br><br>
+            Through anonymity, Smythly offers a space where creativity thrives, unhindered by expectations or labels. Whether exploring emotional depth, bold adventures, or reflective musings, Smythly invites you to escape into a world where imagination knows no bounds.<br><br>
+            But there's a twist! As part of our unique experience, Smythly offers a prize for anyone who can successfully unveil the identity of the mysterious author. Join the hunt, engage with our stories, and see if you have what it takes to unlock this intriguing secret.
+        
+        </strong> </p>
+        <p>
+            At Smythly, the focus is on raw, unfiltered storytelling. Our works cross genres and defy conventional boundaries, drawing readers into compelling narratives that resonate on a personal level.<br><br>
+            With each piece, we hope to spark thought, evoke emotion, and leave a lasting impact. As the stories unfold, the true essence of Smythly comes to life—a place where words matter more than names. Can you uncover the identity behind the words? Join us and discover the thrill of the chase!
+        </p>
+    </section>
+</main>
+        
+    <script>
+        let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const items = document.querySelectorAll('.authorsel-item');
+    currentIndex = (currentIndex + direction + items.length) % items.length;
+
+    items.forEach((item, index) => {
+        item.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+    });
+}
+
+    </script>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+   
+    window.addEventListener('scroll', function() {
+        const navLinks = document.querySelector('.nav-links');
+        const scrollPosition = window.scrollY;
+
+        if (navLinks.classList.contains('active')) {
+            navLinks.style.top = `${scrollPosition + 80}px`;
+        }
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+        </html>
